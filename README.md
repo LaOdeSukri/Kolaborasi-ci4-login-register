@@ -1,19 +1,20 @@
 # Setup GitHub Kolaborasi MVC Project
+TIM DEVELOPMENT INI DAPAT BERUBAH POSISI
 
 ## 1. Struktur Tugas Siswa (Metode MVC)
-- **Siswa A (View):** Membuat tampilan login & register.
-- **Siswa B (Model & Database):** Membuat model, validasi, dan struktur database.
-- **Siswa C (Controller):** Membuat controller dengan method `login()`, `register()`, `logout()`.
-
+- **Dev1 (View):** Membuat tampilan login & register.
+- **Dev2 (Model & Database):** Membuat model, validasi, dan struktur database.
+- **Dev3 (Controller):** Membuat controller dengan method `login()`, `register()`, `logout()`.
+- **Dev1,Dev2,Dev3 (Routes):** Membuat atau cek routes Routes.
+- 
 ## 2. Alur Pengerjaan
-1. Buat repo di GitHub (misalnya: `project-login-register`).
-2. Tambahkan kolaborator (A, B, C).
-3. Buat branch terpisah:
-   - `feature/view-login-register` (A)
-   - `feature/model-validation-db` (B)
-   - `feature/controller-auth` (C)
-4. Gunakan Pull Request (PR) untuk merge ke branch `main`.
-5. Review code sebelum merge agar tidak bentrok.
+1. Kolaborator (Dev1, Dev2, Dev2).
+2. branch terpisah:
+   - `feature/view-login-register` (Dev1)
+   - `feature/model-validation-db` (Dev2)
+   - `feature/controller-auth` (Dev3)
+3. Gunakan Pull Request (PR) untuk merge ke branch `main`.
+4. Review code sebelum merge agar tidak bentrok.
 
 ## 3. Skeleton Method Controller
 ```php
@@ -36,7 +37,7 @@ class AuthController extends BaseController {
 ### Inisialisasi Repo
 ```bash
 git init
-git remote add origin https://github.com/username/project-login-register.git
+git remote add origin https://github.com/LaOdeSukri/Kolaborasi-ci4-login-register.git
 git branch -M main
 git push -u origin main
 ```
@@ -64,5 +65,5 @@ Tuliskan deskripsi singkat tentang apa yang dikerjakan.
 - [ ] Task 2
 
 ## Catatan
-Tambahkan catatan tambahan bila ada.
+catatan tambahan.
 ```
