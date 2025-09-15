@@ -1,69 +1,68 @@
-# Setup GitHub Kolaborasi MVC Project
-TIM DEVELOPMENT INI DAPAT BERUBAH POSISI
+# CodeIgniter 4 Application Starter
 
-## 1. Struktur Tugas Siswa (Metode MVC)
-- **Dev1 (View):** Membuat tampilan login & register.
-- **Dev2 (Model & Database):** Membuat model, validasi, dan struktur database.
-- **Dev3 (Controller):** Membuat controller dengan method `login()`, `register()`, `logout()`.
-- **Dev1,Dev2,Dev3 (Routes):** Membuat atau cek routes Routes.
-- 
-## 2. Alur Pengerjaan
-1. Kolaborator (Dev1, Dev2, Dev2).
-2. branch terpisah:
-   - `feature/view-login-register` (Dev1)
-   - `feature/model-validation-db` (Dev2)
-   - `feature/controller-auth` (Dev3)
-3. Gunakan Pull Request (PR) untuk merge ke branch `main`.
-4. Review code sebelum merge agar tidak bentrok.
+## What is CodeIgniter?
 
-## 3. Skeleton Method Controller
-```php
-class AuthController extends BaseController {
-    public function login() {
-        // TODO: Handle login
-    }
+CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
+More information can be found at the [official site](https://codeigniter.com).
 
-    public function register() {
-        // TODO: Handle register
-    }
+This repository holds a composer-installable app starter.
+It has been built from the
+[development repository](https://github.com/codeigniter4/CodeIgniter4).
 
-    public function logout() {
-        // TODO: Handle logout
-    }
-}
-```
+More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-## 4. Setup GitHub Repo
-### Inisialisasi Repo
-```bash
-git init
-git remote add origin https://github.com/LaOdeSukri/Kolaborasi-ci4-login-register.git
-git branch -M main
-git push -u origin main
-```
+You can read the [user guide](https://codeigniter.com/user_guide/)
+corresponding to the latest version of the framework.
 
-### Buat Branch Sesuai Tugas
-```bash
-git checkout -b feature/view-login-register
-git checkout -b feature/model-validation-db
-git checkout -b feature/controller-auth
-```
+## Installation & updates
 
-### Workflow
-- Commit perubahan di branch masing-masing.
-- Push ke GitHub.
-- Buat Pull Request.
-- Review & merge ke `main`.
+`composer create-project codeigniter4/appstarter` then `composer update` whenever
+there is a new release of the framework.
 
-## 5. Issue Template
-```markdown
-## Deskripsi
-Tuliskan deskripsi singkat tentang apa yang dikerjakan.
+When updating, check the release notes to see if there are any changes you might need to apply
+to your `app` folder. The affected files can be copied or merged from
+`vendor/codeigniter4/framework/app`.
 
-## Task
-- [ ] Task 1
-- [ ] Task 2
+## Setup
 
-## Catatan
-catatan tambahan.
-```
+Copy `env` to `.env` and tailor for your app, specifically the baseURL
+and any database settings.
+
+## Important Change with index.php
+
+`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
+for better security and separation of components.
+
+This means that you should configure your web server to "point" to your project's *public* folder, and
+not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
+framework are exposed.
+
+**Please** read the user guide for a better explanation of how CI4 works!
+
+## Repository Management
+
+We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
+We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
+FEATURE REQUESTS.
+
+This repository is a "distribution" one, built by our release preparation script.
+Problems with it can be raised on our forum, or as issues in the main repository.
+
+## Server Requirements
+
+PHP version 8.1 or higher is required, with the following extensions installed:
+
+- [intl](http://php.net/manual/en/intl.requirements.php)
+- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+
+> [!WARNING]
+> - The end of life date for PHP 7.4 was November 28, 2022.
+> - The end of life date for PHP 8.0 was November 26, 2023.
+> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
+> - The end of life date for PHP 8.1 will be December 31, 2025.
+
+Additionally, make sure that the following extensions are enabled in your PHP:
+
+- json (enabled by default - don't turn it off)
+- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
+- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
