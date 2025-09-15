@@ -1,68 +1,117 @@
-# CodeIgniter 4 Application Starter
+# Kolaborasi CI4 Login & Register
 
-## What is CodeIgniter?
+Proyek ini dibuat sebagai latihan kolaborasi tim dalam membangun aplikasi **Login & Register** menggunakan **CodeIgniter 4 (CI4)** dengan metode **MVC**.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 👥 Struktur Tim (Metode MVC)
+- **Dev1 (View)** → Membuat tampilan login & register.
+- **Dev2 (Model & Database)** → Membuat model, validasi, dan struktur database.
+- **Dev3 (Controller)** → Membuat controller dengan method `login()`, `register()`, `logout()`.
+- **Semua Dev** → Menangani `Routes` bila diperlukan.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+---
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## 🛠️ Setup Project
 
-## Installation & updates
+### 1. Clone Repo
+```bash
+git clone https://github.com/LaOdeSukri/Kolaborasi-ci4-login-register.git
+cd Kolaborasi-ci4-login-register
+```
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+### 2. Install Dependencies
+```bash
+composer install
+```
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### 3. Copy & Konfigurasi `.env`
+```bash
+cp env .env
+```
+Atur:
+- `app.baseURL`
+- `database.default.*`
 
-## Setup
+### 4. Jalankan Server
+```bash
+php spark serve
+```
+Akses di: [http://localhost:8080](http://localhost:8080)
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+---
 
-## Important Change with index.php
+## 🌿 Workflow Git
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### Buat branch sesuai tugas:
+```bash
+git checkout -b Dev1-(view-login-register)
+git checkout -b Dev2-(model-validation-db)
+git checkout -b Dev3-(controller-auth)
+```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Workflow kerja:
+1. **Commit** perubahan di branch masing-masing.
+2. **Push** ke GitHub.
+3. Buat **Pull Request (PR)** ke branch `main`.
+4. Lakukan **Code Review** sebelum merge.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+---
 
-## Repository Management
+## 📌 Skeleton Method Controller
+```php
+class AuthController extends BaseController {
+    public function login() {
+        // TODO: Handle login
+    }
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+    public function register() {
+        // TODO: Handle register
+    }
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+    public function logout() {
+        // TODO: Handle logout
+    }
+}
+```
 
-## Server Requirements
+---
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## 📂 Struktur Folder CI4 (Ringkas)
+```
+app/
+ ├── Controllers/
+ ├── Models/
+ ├── Views/
+ └── Config/
+public/
+writable/
+.env
+```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+---
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+## ✅ Aturan Kontribusi
+- Selalu kerja di **branch masing-masing**.
+- Jangan langsung commit ke `main`.
+- Gunakan **commit message jelas** (contoh: `feat: tambah validasi email di register`).
+- Gunakan **PR** untuk merge.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+---
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## 📝 Issue Template
+```markdown
+## Deskripsi
+Tuliskan deskripsi singkat tentang apa yang dikerjakan.
+
+## Task
+- [ ] Task 1
+- [ ] Task 2
+
+## Catatan
+Catatan tambahan.
+```
+
+---
+
+🚀 **Happy coding & happy collaboration!**
